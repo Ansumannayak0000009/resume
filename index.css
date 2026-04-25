@@ -1,0 +1,164 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Orbitron',sans-serif;
+}
+
+body{
+background:#050505;
+color:#fff;
+height:100vh;
+overflow:hidden;
+cursor:none;
+}
+
+#bgCanvas{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-3;
+}
+
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background:radial-gradient(circle at 50% 50%, rgba(0,255,136,0.15), transparent 60%);
+animation:pulseBg 4s ease-in-out infinite alternate;
+z-index:-2;
+}
+
+@keyframes pulseBg{
+0%{opacity:0.3;}
+100%{opacity:0.7;}
+}
+
+.console{
+display:flex;
+height:100vh;
+}
+
+.alien-menu{
+width:25%;
+position:relative;
+padding:40px;
+border-right:1px solid rgba(0,255,100,0.3);
+overflow:hidden;
+background:linear-gradient(135deg,#001f14,#003322,#001f14);
+}
+
+.alien-menu::before{
+content:"";
+position:absolute;
+top:-50%;
+left:-50%;
+width:200%;
+height:200%;
+background:radial-gradient(circle,#00ff8820,transparent 60%);
+animation:rotateBg 15s linear infinite;
+z-index:0;
+}
+
+@keyframes rotateBg{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+
+.alien-menu h2,
+.alien-menu ul{
+position:relative;
+z-index:1;
+}
+
+.alien-menu ul{
+list-style:none;
+}
+
+.alien-menu li{
+padding:15px;
+margin-bottom:15px;
+cursor:pointer;
+transition:0.3s;
+border-radius:10px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+}
+
+.alien-menu li:hover{
+background:#00ff88;
+color:#000;
+transform:translateX(10px);
+box-shadow:0 0 20px #00ff88;
+}
+
+.showcase{
+flex:1;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+.showcase img{
+width:300px;
+height:300px;
+object-fit:contain;
+transition:0.5s ease;
+}
+
+.showcase img:hover{
+transform:scale(1.1) rotate(5deg);
+}
+
+.showcase h1{
+margin-top:20px;
+font-size:40px;
+}
+
+.showcase p{
+margin:15px 0;
+color:#00ff88;
+}
+
+.stats{
+width:60%;
+}
+
+.bar{
+height:20px;
+background:#111;
+border-radius:20px;
+margin:15px 0;
+overflow:hidden;
+}
+
+.bar div{
+height:100%;
+width:0%;
+background:linear-gradient(90deg,#d90e0e,#aabe29);
+transition:1s ease;
+}
+
+.cursor{
+width:25px;
+height:25px;
+border-radius:50%;
+position:fixed;
+top:0;
+left:0;
+pointer-events:none;
+z-index:99999;
+background:radial-gradient(circle,#00ff88,#00ff8840);
+mix-blend-mode:screen;
+filter:blur(4px);
+transform:translate(-50%, -50%);
+transition:width 0.3s ease,height 0.3s ease,background 0.3s ease;
+}
+
+img{
+pointer-events:auto;
+}

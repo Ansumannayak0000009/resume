@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Omnitrix Console</title>
+<link rel="stylesheet" href="ben10.css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<canvas id="bgCanvas"></canvas>
+
+<div class="cursor"></div>
+
+<div class="console">
+
+<div class="alien-menu">
+<h2>ALIENS</h2>
+<ul>
+<li onclick="selectAlien('heatblast')">Heatblast</li>
+<li onclick="selectAlien('fourarms')">Four Arms</li>
+<li onclick="selectAlien('xlr8')">XLR8</li>
+<li onclick="selectAlien('diamondhead')">Diamondhead</li>
+</ul>
+</div>
+
+<div class="showcase">
+<img id="alienImg" src="https://i.pinimg.com/originals/53/01/05/53010574d804ad841943d5353ee95ae6.png">
+<h1 id="alienName">Heatblast</h1>
+<p id="alienDesc">Master of Fire Manipulation</p>
+
+<div class="stats">
+<div class="bar"><div id="strength"></div></div>
+<div class="bar"><div id="speed"></div></div>
+<div class="bar"><div id="intelligence"></div></div>
+</div>
+</div>
+
+</div>
+
+<script src="ben10.js"></script>
+</body>
+</html>
+
+
+
